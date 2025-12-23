@@ -1,0 +1,223 @@
+/* Global Scrollbar Hiding */
+body::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@500;700&display=swap');
+
+/* ===========================
+   MAIN CARD CONTAINER ✅ UPDATED
+   =========================== */
+.complaintX-container {
+  width: 100%;
+  max-width: 680px;          /* 🔥 REAL WIDTH INCREASE */
+  margin: 40px auto;
+  padding: 30px 36px;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 10px 35px rgba(226, 165, 255, 0.25),
+              0 6px 18px rgba(255, 200, 240, 0.15);
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* Title & Welcome */
+.complaintX-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  background: linear-gradient(93deg, #ffb952 16%, #c62cff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.02em;
+}
+
+.complaintX-welcome {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 22px;
+}
+
+.complaintX-name {
+  color: #c12caf;
+  font-weight: 700;
+}
+
+/* ===========================
+   TOGGLE BUTTONS
+   =========================== */
+.typeX-toggle {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 24px;
+  border: none;
+}
+
+.typeX-toggle button {
+  flex: 1;
+  height: 52px;
+  border-radius: 18px;
+  border: 1px solid #f0ddfb;
+  background: #ffffff;
+  color: #8b45b4;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(220, 185, 255, 0.25);
+}
+
+.typeX-toggle button:hover {
+  transform: translateY(-2px);
+}
+
+.typeX-toggle button.active {
+  background: linear-gradient(90deg, #fdba3b, #f041b9, #7a36fc);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 24px rgba(236, 72, 153, 0.45);
+}
+
+/* ===========================
+   FORM
+   =========================== */
+.formX {
+  text-align: left;
+}
+
+.formX label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 16px 0 6px;
+  color: #6e299a;
+}
+
+.formX input,
+.formX select,
+.formX textarea {
+  width: 100%;
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid #e1bcfa;
+  background: #fbf7ff;
+  padding: 0 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #563068;
+  transition: 0.2s;
+}
+
+.formX textarea {
+  padding: 14px 16px;
+  min-height: 110px;
+  resize: none;
+}
+
+.formX input:focus,
+.formX select:focus,
+.formX textarea:focus {
+  outline: none;
+  border-color: #c62cff;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(198, 44, 255, 0.15);
+}
+
+/* ===========================
+   PRIORITY BUTTONS
+   =========================== */
+.priorityX-btns {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.priorityX-btns button {
+  flex: 1;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e1bcfa;
+  color: #ad30bd;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.priorityX-btns button.pactive {
+  background: linear-gradient(90deg, #fdba3b, #ee41d9, #7936fd);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 5px 15px rgba(253, 145, 239, 0.4);
+}
+
+/* ===========================
+   FILE UPLOAD
+   =========================== */
+.fileX-box {
+  background: #faf6fe;
+  border: 2px dashed #e1bcfa;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8e5bb4;
+  margin: 14px 0 22px;
+}
+
+.uploadX-btn {
+  margin-top: 12px;
+  padding: 9px 28px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #fdba3b, #fd2db7, #6d36fd);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===========================
+   SUBMIT BUTTON
+   =========================== */
+.submitX-btn {
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #fdba3b, #fd2db7, #7847fd);
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(252, 181, 255, 0.45);
+}
+
+.submitX-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 640px) {
+  .complaintX-container {
+    max-width: 96vw;
+    padding: 22px 18px;
+    margin: 16px auto;
+  }
+}
+
+

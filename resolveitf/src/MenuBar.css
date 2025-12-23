@@ -1,0 +1,110 @@
+/* --- MenuBar.css --- */
+
+.menubar {
+  position: fixed;
+  bottom: 20px; /* Floats slightly above the bottom edge */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000; /* High z-index to stay on top */
+  pointer-events: none; /* Allows clicking through the empty space around the menu */
+}
+
+.menu-pill {
+  pointer-events: auto; /* Re-enable clicks on the menu itself */
+  width: 95%; /* Takes up most of the screen on mobile */
+  max-width: 700px; /* RESTORED WIDTH: Kept wide as per your request */
+  height: 74px;
+  
+  /* --- TRANSPARENT GLASS EFFECT --- */
+  background: rgba(255, 255, 255, 0.8); /* See-through white (80% opacity) */
+  backdrop-filter: blur(15px);           /* Blurs the background content behind it */
+  -webkit-backdrop-filter: blur(15px);   /* Safari support */
+  
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Subtle glass border */
+  border-radius: 26px; /* Rounded corners */
+  
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Soft floating shadow */
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+  margin: 0 auto;
+  list-style: none;
+  transition: transform 0.3s ease;
+}
+
+.menu-pill li {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280; /* Neutral Gray */
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrap {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease;
+  background: transparent;
+}
+
+.menu-pill li img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.6); /* Greyed out when inactive */
+  transition: 0.25s;
+}
+
+.menu-pill li span {
+  display: block;
+  margin-top: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- ACTIVE STATE --- */
+.menu-pill li.active {
+  color: #7c3aed; /* Purple/Blue Active Color */
+  transform: translateY(-3px); /* Slight pop up */
+}
+
+.menu-pill li.active .icon-wrap {
+  background: rgba(124, 58, 237, 0.15); /* Soft Purple Background for Icon */
+}
+
+.menu-pill li.active img {
+  filter: grayscale(0%) opacity(1); /* Full Color */
+  transform: scale(1.1);
+}
+
+/* --- HOVER STATE --- */
+.menu-pill li:hover {
+  color: #7c3aed;
+}
+.menu-pill li:hover img {
+  filter: grayscale(0%) opacity(0.8);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 480px) {
+  .menu-pill {
+    width: 92%; /* Slightly wider on mobile */
+    height: 70px;
+    padding: 0 5px;
+    bottom: 15px;
+  }
+}

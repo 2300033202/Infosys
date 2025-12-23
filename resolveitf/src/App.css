@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* --- GLOBAL RESETS --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; 
+}
+
+/* --- ANIMATED BACKGROUND (Blue/Purple Theme) --- */
+#container {
+  background: #4e54c8;  /* Fallback */
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+  background: linear-gradient(to left, #8f94fb, #4e54c8);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animated Particles (Slower, Smoother) */
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.15); /* Lower opacity */
+  animation: animate 35s linear infinite; /* Slower speed */
+  bottom: -150px;
+  border-radius: 50%;
+}
+
+.circles li:nth-child(1){ left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+.circles li:nth-child(2){ left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 22s; }
+.circles li:nth-child(3){ left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+.circles li:nth-child(4){ left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 28s; }
+.circles li:nth-child(5){ left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+.circles li:nth-child(6){ left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+.circles li:nth-child(7){ left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+.circles li:nth-child(8){ left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+.circles li:nth-child(9){ left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+.circles li:nth-child(10){ left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 21s; }
+
+@keyframes animate {
+  0%{ transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
+  100%{ transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+}
+
+/* --- NAVBAR (Landing) --- */
+#navbar {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-brand .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid white;
+}
+
+.nav-signin-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 10px 25px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-signin-btn:hover { background: white; color: #4e54c8; }
+
+/* --- HERO SECTION --- */
+#hero-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  z-index: 5;
+}
+
+.hero-text {
+  flex: 1;
+  padding-left: 50px;
+  color: white;
+  animation: slideInLeft 1s ease-out;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.cta-btn {
+  padding: 15px 45px;
+  font-size: 1.1rem;
+  background: white;
+  color: #4e54c8;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: slideInRight 1s ease-out;
+}
+
+.hero-image img {
+  max-width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  transform: perspective(1000px) rotateY(-10deg);
+  transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.02);
+}
+
+/* =========================================
+   DASHBOARD HEADER STYLES (Fix for Orange Bar)
+   ========================================= */
+#header {
+  width: 100%;
+  height: 65px;
+  /* Updated to Purple Gradient */
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  color: white;
+}
+
+#header .logo { width: 35px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); }
+#header .logoText { font-size: 18px; font-weight: 700; margin-left: 10px; color: white; }
+
+/* Logout Icon Fix (Small, White, Neat) */
+#header .signinIcon, 
+#header img[alt="logout"],
+#header .logout-icon {
+  width: 24px !important;  /* Force size */
+  height: 24px !important;
+  cursor: pointer;
+  filter: brightness(0) invert(1); /* Forces it to be white if it's an image */
+  opacity: 0.9;
+  transition: transform 0.2s;
+}
+
+#header .signinIcon:hover,
+#header .logout-icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.signinText {
+  color: white; font-weight: 600; font-size: 14px; margin-right: 10px; cursor: pointer;
+}
+
+/* --- POPUP (GLASSMORPHISM) --- */
+#popupBackdrop {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px);
+  z-index: 1000; display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.popup-window {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px; padding: 40px; position: relative;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  animation: slideUp 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+#closeBtn {
+  position: absolute; top: 15px; right: 15px; background: transparent; border: none;
+  cursor: pointer; color: #555; transition: 0.3s;
+}
+#closeBtn:hover { color: #d63031; transform: rotate(90deg); }
+
+.popup-header h2 { text-align: center; color: #333; margin-bottom: 30px; font-weight: 700; }
+
+/* --- FLOATING LABELS & INPUTS --- */
+.floating-label-group { position: relative; margin-bottom: 25px; }
+
+.floating-label-group input, .floating-label-group select {
+  width: 100%; padding: 12px 10px; font-size: 16px; color: #333;
+  border: none; border-bottom: 2px solid #ccc; background: transparent;
+  outline: none; transition: 0.3s;
+}
+
+.floating-label-group label {
+  position: absolute; top: 12px; left: 10px; font-size: 16px; color: #888;
+  pointer-events: none; transition: 0.3s ease all;
+}
+
+/* Input Focus/Valid States */
+.floating-label-group input:focus, .floating-label-group select:focus { border-bottom: 2px solid #4e54c8; }
+.floating-label-group input:focus ~ label,
+.floating-label-group input:valid ~ label,
+.floating-label-group select:focus ~ label,
+.floating-label-group select:valid ~ label {
+  top: -15px; left: 0; font-size: 12px; color: #4e54c8; font-weight: bold;
+}
+.floating-label-group select:valid { color: #333; }
+
+.eye-icon { position: absolute; right: 10px; top: 10px; color: #888; }
+.eye-icon:hover { color: #4e54c8; }
+
+.action-btn {
+  width: 100%; padding: 12px; background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: white; border: none; border-radius: 25px; font-size: 1.1rem;
+  font-weight: 600; cursor: pointer; box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+  transition: 0.3s;
+}
+.action-btn:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(78, 84, 200, 0.6); }
+
+.switch-text { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #555; }
+.switch-text span { color: #4e54c8; font-weight: 700; cursor: pointer; text-decoration: none; }
+.switch-text span:hover { text-decoration: underline; }
+
+.forgot-pass { text-align: right; font-size: 0.85rem; color: #555; margin-top: -15px; margin-bottom: 20px; cursor: pointer; }
+.forgot-pass:hover { color: #4e54c8; }
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+
+.fade-in { animation: fadeIn 0.5s ease; }
